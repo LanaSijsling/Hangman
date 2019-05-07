@@ -11,6 +11,7 @@
 <body>
   <h1>Hangman</h1>
   <button onclick="livesLeft(5)" class="start">Start</button>
+  <button onclick="reset()" class="reset">Reset</button>
   <div class="container">
     <div id="item1" class="letters">
       <button onclick="guess('A')" class="A">A</button>
@@ -34,15 +35,24 @@
       if (count == 5) {
         lives.innerHTML = "5";
       }
-      else if (count == 1) {
-        alert("Failed!");
+      else if (count < 1) {
         lives.innerHTML = "0";
+        alert("Failed");
       }
       else {
-        lives.innerHTML = count -1;
+        lives.innerHTML = count;
+      }
+      if (count == 0) {
+        count = 5;
+        lives.innerHTML = "Press Reset";
       }
 
     };
+
+    function reset() {
+      lives.innerHTML = "Press Start";
+      count = 5;
+    }
 
     function guess(n) {
      // alert("clicked " + n);
@@ -52,7 +62,7 @@
       }
       else {
      //   alert("try again!");
-        count = count -1;
+        count -= 1;
         livesLeft(count);
       }
     };
