@@ -1,1 +1,38 @@
+body {
+  display: block;
+}
 
+#item1 {grid-area: letters;}
+#item2 {grid-area: lives;}
+#item3 {grid-area: answer;}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'letters lives'
+    'answer answer';
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 400px;
+}
+
+.letters {
+  background-color: aqua;
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.lives {
+  background-color: blueviolet;
+  width: 200px;
+  height: 200px;
+  float: right;
+}
+
+.answer {
+  background-color: brown;
+  width: 200px;
+  height: 25px;
+  float: left;
+}
