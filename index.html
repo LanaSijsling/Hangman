@@ -10,6 +10,7 @@
 </head>
 <body>
   <h1>Hangman</h1>
+  <button onclick="livesLeft(5)" class="start">Start</button>
   <div class="container">
     <div id="item1" class="letters">
       <button onclick="guess('A')" class="A">A</button>
@@ -20,11 +21,28 @@
 
     <div id="item3" class="answer"></div>
   </div>
-  
+
   <script>
     
     var answer = document.querySelector(".answer");
-    var word = "A";
+    var word = "B";
+
+    var lives = document.querySelector(".lives");
+    var count = 5;
+
+    function livesLeft(count) {
+      if (count == 5) {
+        lives.innerHTML = "5";
+      }
+      else if (count == 1) {
+        alert("Failed!");
+        lives.innerHTML = "0";
+      }
+      else {
+        lives.innerHTML = count -1;
+      }
+
+    };
 
     function guess(n) {
      // alert("clicked " + n);
@@ -33,9 +51,11 @@
         answer.innerHTML = n;
       }
       else {
-        alert("try again!");
+     //   alert("try again!");
+        count = count -1;
+        livesLeft(count);
       }
-    }
+    };
 
 
 

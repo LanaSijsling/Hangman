@@ -2,6 +2,10 @@ body {
   display: block;
 }
 
+.start {
+  margin: 5px;
+}
+
 #item1 {grid-area: letters;}
 #item2 {grid-area: lives;}
 #item3 {grid-area: answer;}
@@ -28,6 +32,7 @@ body {
   width: 200px;
   height: 200px;
   float: right;
+  text-align: center;
 }
 
 .answer {
