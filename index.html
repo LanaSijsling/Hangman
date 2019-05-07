@@ -10,13 +10,15 @@
   <title>Hangman</title>
 </head>
 <body>
-  <h1>Hangman</h1>
-  <button onclick="livesLeft(5)" class="start">Start</button>
-  <button onclick="reset()" class="reset">Reset</button>
+  <h1 class="jumbotron">Hangman</h1>
+  <div class="buttons">
+    <button type="button" onclick="livesLeft(5)" class="start btn btn-primary">Start</button>
+    <button type="button" onclick="reset()" class="reset btn btn-primary">Reset</button>
+  </div>
   <div class="container">
     <div id="item1" class="letters">
-      <button onclick="guess('A')" class="A">A</button>
-      <button onclick="guess('B')" class="B">B</button>
+      <button onclick="guess('A')" class="A btn btn-outline-dark text-dark">A</button>
+      <button onclick="guess('B')" class="B btn btn-outline-dark text-dark">B</button>
     </div>
 
     <div id="item2" class="lives"></div>
