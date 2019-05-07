@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="hangman.css" rel="stylesheet" type="text/css" media="all">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <title>Hangman</title>
 </head>
 <body>
@@ -19,14 +20,17 @@
 
     <div id="item3" class="answer"></div>
   </div>
+  
   <script>
-
-    var word = "B";
+    
+    var answer = document.querySelector(".answer");
+    var word = "A";
 
     function guess(n) {
      // alert("clicked " + n);
       if(n == word){
-        alert("good guess!");
+     //   alert("good guess!");
+        answer.innerHTML = n;
       }
       else {
         alert("try again!");
