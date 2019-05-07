@@ -1,8 +1,9 @@
 body {
   display: block;
+  text-align: center;
 }
 
-.start {
+.start, .reset {
   margin: 5px;
 }
 
