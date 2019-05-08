@@ -16,18 +16,19 @@
     <button type="button" onclick="reset()" class="reset btn btn-primary">Reset</button>
   </div>
   <div class="container">
-    <div id="item1" class="letters">
+    <div id="item1" class="info"><h3>Press Start</h3><p>Pick a letter.</p><p>Not correct?</p><p>Pick another.</p></div>
+    <div id="item2" class="letters">
       <button onclick="guess('A')" class="A btn btn-outline-dark">A</button>
       <button onclick="guess('B')" class="B btn btn-outline-dark">B</button>
       <button onclick="guess('C')" class="C btn btn-outline-dark">C</button>
       <button onclick="guess('D')" class="D btn btn-outline-dark">D</button>
       <button onclick="guess('E')" class="E btn btn-outline-dark">E</button>
-      <button onclick="guess('F')" class="F btn btn-outline-dark">F</button>
+      <button onclick="guess('F')" class="F btn btn-outline-dark">F</button></br>
     </div>
 
-    <div id="item2" class="lives"></div>
+    <div id="item3" class="lives"></div>
 
-    <div id="item3" class="answer"></div>
+    <div id="item4" class="answer"></div>
   </div>
 
   <script>
@@ -37,6 +38,13 @@
     console.log(word);
     
     var answer = document.querySelector(".answer");
+
+    function answerArray() {
+    var answerLength = word.length;
+      for (l=0; l < answerLength; l++) {
+      document.querySelector(".answer").innerHTML += "_";
+      };
+    };
     
     var lives = document.querySelector(".lives");
     var count = 10;
@@ -66,13 +74,9 @@
         livesLeft(count);
       }
     };
-    
 
     function livesLeft(count) {
-      var answerLength = word.length;
-      for (l=0; l < answerLength; l++) {
-      document.querySelector(".answer").innerHTML += "_";
-      }
+      answerArray();
       if (count == 5) {
         lives.innerHTML = "10";
       }

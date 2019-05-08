@@ -13,18 +13,28 @@ button {
   margin: 5px;
 }
 
-#item1 {grid-area: letters;}
-#item2 {grid-area: lives;}
-#item3 {grid-area: answer;}
+#item1 {grid-area: info}
+#item2 {grid-area: letters;}
+#item3 {grid-area: lives;}
+#item4 {grid-area: answer;}
 
 .container {
   display: grid;
   grid-template-areas:
-    'letters lives'
-    'answer answer';
+    'info letters lives'
+    'answer answer answer';
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   width: 400px;
+}
+
+.info {
+  margin-left: -175px;
+  width: 200px;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .letters {
@@ -32,7 +42,6 @@ button {
   height: 200px;
   border: 1px solid gray;
   border-radius: 10px;
-  float: left;
 }
 
 .lives {
@@ -40,15 +49,15 @@ button {
   padding-top: 25%;
   width: 200px;
   height: 200px;
-  float: right;
   font-size: 30px;
   text-align: center;
   border-radius: 10px;
 }
 
 .answer {
+  margin-left: 35px;
   background-color: brown;
-  width: 200px;
+  width: 300px;
   height: 25px;
   float: left;
   color: wheat;
