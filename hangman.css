@@ -1,7 +1,7 @@
 body {
   display: block;
   text-align: center;
-  background-color: seashell;
+  background-color: lavender;
 }
 
 .jumbotron {
@@ -38,10 +38,11 @@ button {
 }
 
 .letters {
-  width: 300px;
+  width: 325px;
   height: 200px;
   border: 1px solid gray;
   border-radius: 10px;
+  display: none;
 }
 
 .lives {
@@ -52,6 +53,7 @@ button {
   font-size: 30px;
   text-align: center;
   border-radius: 10px;
+  display: none;
 }
 
 .answer {
@@ -62,10 +64,15 @@ button {
   float: left;
   color: wheat;
   border-radius: 10px;
+  display: none;
 }
 
-.img {
+.imghappy, .imgsad {
   margin-top: 10px; 
-  background-color: seashell;
+  background-color: lavender;
   display: none;
+}
+
+.imghangman {
+  display: block;
 }

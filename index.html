@@ -16,6 +16,7 @@
     <button type="button" onclick="window.location.reload();" class="reset btn btn-primary">Reset</button>
   </div>
   <div class="container">
+      <div class="imghangman"><img src="Hangman.jpg" alt="Image_Hangman"></div>
     <div id="item1" class="info"><h3>Press Start</h3></br>
       <p>Pick a letter.</p><p>Not correct?</p><p>Pick another.</p></div>
     <div id="item2" class="letters">
@@ -31,7 +32,8 @@
 
     <div id="item4" class="answer"></div>
   </div>
-  <div class="img"><img src="SmileyHappy.jpg" alt="SmileyHappy"></div>
+  <div class="imghappy"><img src="SmileyHappy.jpg" alt="SmileyHappy"></div>
+  <div class="imgsad"><img src="SmileySad.jpg" alt="SmileySad"></div>
 
   <script>
     var words = ["AB","BC","CD","DE","EF","FA"];
@@ -53,7 +55,7 @@
 
     function checkAnswer(n) {
         if (answer === word) {
-        document.querySelector(".img").style.display = "block";
+        document.querySelector(".imghappy").style.display = "block";
         // alert("Word Guessed");
         lives.innerHTML = "Press Reset";
         };
@@ -83,13 +85,17 @@
     };
 
     function livesLeft(count) {
-      // answerArray();
-      if (count == 5) {
+      document.querySelector(".imghangman").style.display = "none";
+      document.querySelector(".letters").style.display = "block";
+      document.querySelector(".lives").style.display = "block";
+      document.querySelector(".answer").style.display = "block";
+      if (count == 10) {
         lives.innerHTML = "10";
       }
       else if (count < 1) {
         lives.innerHTML = "0";
-        alert("Failed");
+        document.querySelector(".imgsad").style.display = "block";
+        // alert("Failed");
       }
       else {
         lives.innerHTML = count;
