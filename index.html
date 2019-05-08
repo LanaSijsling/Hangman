@@ -17,8 +17,12 @@
   </div>
   <div class="container">
     <div id="item1" class="letters">
-      <button onclick="guess('A')" class="A btn btn-outline-dark text-dark">A</button>
-      <button onclick="guess('B')" class="B btn btn-outline-dark text-dark">B</button>
+      <button onclick="guess('A')" class="A btn btn-outline-dark">A</button>
+      <button onclick="guess('B')" class="B btn btn-outline-dark">B</button>
+      <button onclick="guess('C')" class="C btn btn-outline-dark">C</button>
+      <button onclick="guess('D')" class="D btn btn-outline-dark">D</button>
+      <button onclick="guess('E')" class="E btn btn-outline-dark">E</button>
+      <button onclick="guess('F')" class="F btn btn-outline-dark">F</button>
     </div>
 
     <div id="item2" class="lives"></div>
@@ -39,6 +43,7 @@
       // if (word == answer) {
       //   console.log("good guess");
         alert("Good guess!");
+        lives.innerHTML = "Press Reset";
       // }
     };
 
