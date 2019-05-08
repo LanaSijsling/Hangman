@@ -1,5 +1,7 @@
 # Hangman
 
+Live demo: https://lanasijsling.github.io/Hangman/
+
 Steps in Hangman:
 - [ ] Pick a random word
 - [x] Take a guess
