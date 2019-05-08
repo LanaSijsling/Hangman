@@ -13,10 +13,11 @@
   <h1 class="jumbotron">Hangman</h1>
   <div class="buttons">
     <button type="button" onclick="livesLeft(10)" class="start btn btn-primary">Start</button>
-    <button type="button" onclick="reset()" class="reset btn btn-primary">Reset</button>
+    <button type="button" onclick="window.location.reload();" class="reset btn btn-primary">Reset</button>
   </div>
   <div class="container">
-    <div id="item1" class="info"><h3>Press Start</h3><p>Pick a letter.</p><p>Not correct?</p><p>Pick another.</p></div>
+    <div id="item1" class="info"><h3>Press Start</h3></br>
+      <p>Pick a letter.</p><p>Not correct?</p><p>Pick another.</p></div>
     <div id="item2" class="letters">
       <button onclick="guess('A')" class="A btn btn-outline-dark">A</button>
       <button onclick="guess('B')" class="B btn btn-outline-dark">B</button>
@@ -30,42 +31,48 @@
 
     <div id="item4" class="answer"></div>
   </div>
+  <div class="img"><img src="SmileyHappy.jpg" alt="SmileyHappy"></div>
 
   <script>
-    
-    var words = ["A","B","C","D","E","F"];
+    var words = ["AB","BC","CD","DE","EF","FA"];
     var word = words[Math.floor(Math.random() * words.length)];
     console.log(word);
     
-    var answer = document.querySelector(".answer");
+    var answer = "";//document.querySelector(".answer");
+    // var antwoord = "";
 
-    function answerArray() {
-    var answerLength = word.length;
-      for (l=0; l < answerLength; l++) {
-      document.querySelector(".answer").innerHTML += "_";
+    // function answerArray() {
+    // var answerLength = word.length;
+      for (l=0; l < word.length; l++) {
+      document.querySelector(".answer").innerHTML += "*";
       };
-    };
+    // };
     
     var lives = document.querySelector(".lives");
     var count = 10;
 
     function checkAnswer(n) {
-      // console.log(word);
-      // if (word == answer) {
-      //   console.log("good guess");
-        alert("Good guess!");
+        if (answer === word) {
+        document.querySelector(".img").style.display = "block";
+        // alert("Word Guessed");
         lives.innerHTML = "Press Reset";
-      // }
+        };
     };
 
 
     function guess(n) {
       // console.log(word);
      // alert("clicked " + n);
-      if(n == word){
-     //   alert("good guess!");
-        answer.innerHTML = n;
-        // console.log("good guess");
+      if(word.includes(n)) {
+      //  alert("good guess!");
+       for (var i = 0; i < word.length ; i++){
+                if (word[i] === n) {
+                    var tempanswer = document.querySelector(".answer").innerHTML;
+                    answer = tempanswer.slice(0,i,1) + n + tempanswer.slice(i+1,word.length,1);
+                    console.log(answer);
+                    document.querySelector(".answer").innerHTML = answer;
+                }
+        }
         checkAnswer();
       }
       else {
@@ -76,7 +83,7 @@
     };
 
     function livesLeft(count) {
-      answerArray();
+      // answerArray();
       if (count == 5) {
         lives.innerHTML = "10";
       }
@@ -92,12 +99,12 @@
       }
     };
 
-    function reset() {
-      lives.innerHTML = "Press Start";
-      answer.innerHTML = "";
-      word = words[Math.floor(Math.random() * words.length)];
-      console.log(word);
-    };
+    // function reset() {
+    //   lives.innerHTML = "Press Start";
+    //   document.querySelector(".answer").innerHTML = "";
+    //   word = words[Math.floor(Math.random() * words.length)];
+    //   console.log(word);
+    // };
 
 
 
