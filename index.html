@@ -12,7 +12,7 @@
 <body>
   <h1 class="jumbotron">Hangman</h1>
   <div class="buttons">
-    <button type="button" onclick="livesLeft(5)" class="start btn btn-primary">Start</button>
+    <button type="button" onclick="livesLeft(10)" class="start btn btn-primary">Start</button>
     <button type="button" onclick="reset()" class="reset btn btn-primary">Reset</button>
   </div>
   <div class="container">
@@ -32,11 +32,12 @@
 
   <script>
     
-    var answer = document.querySelector(".answer");
     var words = ["A","B","C","D","E","F"];
     var word = words[Math.floor(Math.random() * words.length)];
     console.log(word);
-
+    
+    var answer = document.querySelector(".answer");
+    
     var lives = document.querySelector(".lives");
     var count = 10;
 
@@ -68,6 +69,10 @@
     
 
     function livesLeft(count) {
+      var answerLength = word.length;
+      for (l=0; l < answerLength; l++) {
+      document.querySelector(".answer").innerHTML += "_";
+      }
       if (count == 5) {
         lives.innerHTML = "10";
       }
