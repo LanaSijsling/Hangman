@@ -34,6 +34,32 @@
     var lives = document.querySelector(".lives");
     var count = 5;
 
+    function checkAnswer(n) {
+      // console.log(word);
+      // if (word == answer) {
+      //   console.log("good guess");
+        alert("Good guess!");
+      // }
+    };
+
+
+    function guess(n) {
+      // console.log(word);
+     // alert("clicked " + n);
+      if(n == word){
+     //   alert("good guess!");
+        answer.innerHTML = n;
+        // console.log("good guess");
+        checkAnswer();
+      }
+      else {
+     //   alert("try again!");
+        count -= 1;
+        livesLeft(count);
+      }
+    };
+    
+
     function livesLeft(count) {
       if (count == 5) {
         lives.innerHTML = "5";
@@ -49,26 +75,12 @@
         count = 5;
         lives.innerHTML = "Press Reset";
       }
-
     };
 
     function reset() {
       lives.innerHTML = "Press Start";
       answer.innerHTML = "";
       count = 5;
-    }
-
-    function guess(n) {
-     // alert("clicked " + n);
-      if(n == word){
-     //   alert("good guess!");
-        answer.innerHTML = n;
-      }
-      else {
-     //   alert("try again!");
-        count -= 1;
-        livesLeft(count);
-      }
     };
 
 
