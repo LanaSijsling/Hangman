@@ -22,32 +22,32 @@
     <div id="item1" class="info"><h3>Press Start</h3></br>
       <p>Pick a letter.</p><p>To guess the word</p></div>
     <div id="item2" class="letters">
-      <button onclick="guess('a')" class="btn btn-outline-dark">A</button>
-      <button onclick="guess('b')" class="btn btn-outline-dark">B</button>
-      <button onclick="guess('c')" class="btn btn-outline-dark">C</button>
-      <button onclick="guess('d')" class="btn btn-outline-dark">D</button>
-      <button onclick="guess('e')" class="btn btn-outline-dark">E</button>
-      <button onclick="guess('f')" class="btn btn-outline-dark">F</button>
-      <button onclick="guess('g')" class="btn btn-outline-dark">G</button>
-      <button onclick="guess('h')" class="btn btn-outline-dark">H</button>
-      <button onclick="guess('i')" class="btn btn-outline-dark">I</button>
-      <button onclick="guess('j')" class="btn btn-outline-dark">J</button>
-      <button onclick="guess('k')" class="btn btn-outline-dark">K</button>
-      <button onclick="guess('l')" class="btn btn-outline-dark">L</button>
-      <button onclick="guess('m')" class="btn btn-outline-dark">M</button>
-      <button onclick="guess('n')" class="btn btn-outline-dark">N</button>
-      <button onclick="guess('o')" class="btn btn-outline-dark">O</button>
-      <button onclick="guess('p')" class="btn btn-outline-dark">P</button>
-      <button onclick="guess('q')" class="btn btn-outline-dark">Q</button>
-      <button onclick="guess('r')" class="btn btn-outline-dark">R</button>
-      <button onclick="guess('s')" class="btn btn-outline-dark">S</button>
-      <button onclick="guess('t')" class="btn btn-outline-dark">T</button>
-      <button onclick="guess('u')" class="btn btn-outline-dark">U</button>
-      <button onclick="guess('v')" class="btn btn-outline-dark">V</button>
-      <button onclick="guess('w')" class="btn btn-outline-dark">W</button>
-      <button onclick="guess('x')" class="btn btn-outline-dark">X</button>
-      <button onclick="guess('y')" class="btn btn-outline-dark">Y</button>
-      <button onclick="guess('z')" class="btn btn-outline-dark">Z</button>
+      <button onclick="guess('a')" id="a" class="btn btn-outline-dark">A</button>
+      <button onclick="guess('b')" id="b" class="btn btn-outline-dark">B</button>
+      <button onclick="guess('c')" id="c" class="btn btn-outline-dark">C</button>
+      <button onclick="guess('d')" id="d" class="btn btn-outline-dark">D</button>
+      <button onclick="guess('e')" id="e" class="btn btn-outline-dark">E</button>
+      <button onclick="guess('f')" id="f" class="btn btn-outline-dark">F</button>
+      <button onclick="guess('g')" id="g" class="btn btn-outline-dark">G</button>
+      <button onclick="guess('h')" id="h" class="btn btn-outline-dark">H</button>
+      <button onclick="guess('i')" id="i" class="btn btn-outline-dark">I</button>
+      <button onclick="guess('j')" id="j" class="btn btn-outline-dark">J</button>
+      <button onclick="guess('k')" id="k" class="btn btn-outline-dark">K</button>
+      <button onclick="guess('l')" id="l" class="btn btn-outline-dark">L</button>
+      <button onclick="guess('m')" id="m" class="btn btn-outline-dark">M</button>
+      <button onclick="guess('n')" id="n" class="btn btn-outline-dark">N</button>
+      <button onclick="guess('o')" id="o" class="btn btn-outline-dark">O</button>
+      <button onclick="guess('p')" id="p" class="btn btn-outline-dark">P</button>
+      <button onclick="guess('q')" id="q" class="btn btn-outline-dark">Q</button>
+      <button onclick="guess('r')" id="r" class="btn btn-outline-dark">R</button>
+      <button onclick="guess('s')" id="s" class="btn btn-outline-dark">S</button>
+      <button onclick="guess('t')" id="t" class="btn btn-outline-dark">T</button>
+      <button onclick="guess('u')" id="u" class="btn btn-outline-dark">U</button>
+      <button onclick="guess('v')" id="v" class="btn btn-outline-dark">V</button>
+      <button onclick="guess('w')" id="w" class="btn btn-outline-dark">W</button>
+      <button onclick="guess('x')" id="x" class="btn btn-outline-dark">X</button>
+      <button onclick="guess('y')" id="y" class="btn btn-outline-dark">Y</button>
+      <button onclick="guess('z')" id="z" class="btn btn-outline-dark">Z</button>
     </div>
 
     <div id="item3" class="lives"></div>
@@ -83,7 +83,7 @@
      // alert("clicked " + n);
       if(word.includes(n)) {
       //  alert("good guess!");
-       for (var i = 0; i < word.length ; i++){
+        for (var i = 0; i < word.length ; i++){
                 if (word[i] === n) {
                     var tempanswer = document.querySelector(".answer").innerHTML;
                     answer = tempanswer.slice(0,i,1) + n + tempanswer.slice(i+1,word.length,1);
@@ -91,12 +91,14 @@
                     document.querySelector(".answer").innerHTML = answer;
                 }
         }
+        document.getElementById(n).style.backgroundColor = "#32CD32";
         checkAnswer();
       }
       else {
      //   alert("try again!");
         count -= 1;
         livesLeft(count);
+        document.getElementById(n).style.backgroundColor = "#DC143C";
       }
     };
 
