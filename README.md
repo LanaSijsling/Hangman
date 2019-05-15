@@ -7,5 +7,5 @@ Steps in Hangman:
 - [x] Take a guess
 - [x] Check if letter is good
 - [x] Track guesses
-- [ ] Show progress
-- [ ] Finish when word is guessed
+- [X] Show progress
+- [X] Finish when word is guessed
