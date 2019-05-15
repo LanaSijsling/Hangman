@@ -11,6 +11,8 @@
 </head>
 <body>
   <h1 class="jumbotron">Hangman</h1>
+  <div class="imghappy"><img src="SmileyHappy.jpg" alt="SmileyHappy"></div>
+  <div class="imgsad"><img src="SmileySad.jpg" alt="SmileySad"></div>
   <div class="buttons">
     <button type="button" onclick="livesLeft(10)" class="start btn btn-primary">Start</button>
     <button type="button" onclick="window.location.reload();" class="reset btn btn-primary">Reset</button>
@@ -20,35 +22,49 @@
     <div id="item1" class="info"><h3>Press Start</h3></br>
       <p>Pick a letter.</p><p>Not correct?</p><p>Pick another.</p></div>
     <div id="item2" class="letters">
-      <button onclick="guess('A')" class="A btn btn-outline-dark">A</button>
-      <button onclick="guess('B')" class="B btn btn-outline-dark">B</button>
-      <button onclick="guess('C')" class="C btn btn-outline-dark">C</button>
-      <button onclick="guess('D')" class="D btn btn-outline-dark">D</button>
-      <button onclick="guess('E')" class="E btn btn-outline-dark">E</button>
-      <button onclick="guess('F')" class="F btn btn-outline-dark">F</button></br>
+      <button onclick="guess('a')" class="btn btn-outline-dark">A</button>
+      <button onclick="guess('b')" class="btn btn-outline-dark">B</button>
+      <button onclick="guess('c')" class="btn btn-outline-dark">C</button>
+      <button onclick="guess('d')" class="btn btn-outline-dark">D</button>
+      <button onclick="guess('e')" class="btn btn-outline-dark">E</button>
+      <button onclick="guess('f')" class="btn btn-outline-dark">F</button>
+      <button onclick="guess('g')" class="btn btn-outline-dark">G</button>
+      <button onclick="guess('h')" class="btn btn-outline-dark">H</button>
+      <button onclick="guess('i')" class="btn btn-outline-dark">I</button>
+      <button onclick="guess('j')" class="btn btn-outline-dark">J</button>
+      <button onclick="guess('k')" class="btn btn-outline-dark">K</button>
+      <button onclick="guess('l')" class="btn btn-outline-dark">L</button>
+      <button onclick="guess('m')" class="btn btn-outline-dark">M</button>
+      <button onclick="guess('n')" class="btn btn-outline-dark">N</button>
+      <button onclick="guess('o')" class="btn btn-outline-dark">O</button>
+      <button onclick="guess('p')" class="btn btn-outline-dark">P</button>
+      <button onclick="guess('q')" class="btn btn-outline-dark">Q</button>
+      <button onclick="guess('r')" class="btn btn-outline-dark">R</button>
+      <button onclick="guess('s')" class="btn btn-outline-dark">S</button>
+      <button onclick="guess('t')" class="btn btn-outline-dark">T</button>
+      <button onclick="guess('u')" class="btn btn-outline-dark">U</button>
+      <button onclick="guess('v')" class="btn btn-outline-dark">V</button>
+      <button onclick="guess('w')" class="btn btn-outline-dark">W</button>
+      <button onclick="guess('x')" class="btn btn-outline-dark">X</button>
+      <button onclick="guess('y')" class="btn btn-outline-dark">Y</button>
+      <button onclick="guess('z')" class="btn btn-outline-dark">Z</button>
     </div>
 
     <div id="item3" class="lives"></div>
 
     <div id="item4" class="answer"></div>
   </div>
-  <div class="imghappy"><img src="SmileyHappy.jpg" alt="SmileyHappy"></div>
-  <div class="imgsad"><img src="SmileySad.jpg" alt="SmileySad"></div>
+
 
   <script>
-    var words = ["AB","BC","CD","DE","EF","FA"];
+    var words = ["ab","bc","cd","de","ef","fa"];
     var word = words[Math.floor(Math.random() * words.length)];
     console.log(word);
     
-    var answer = "";//document.querySelector(".answer");
-    // var antwoord = "";
-
-    // function answerArray() {
-    // var answerLength = word.length;
+    var answer = "";
       for (l=0; l < word.length; l++) {
       document.querySelector(".answer").innerHTML += "*";
       };
-    // };
     
     var lives = document.querySelector(".lives");
     var count = 10;
@@ -105,12 +121,6 @@
       }
     };
 
-    // function reset() {
-    //   lives.innerHTML = "Press Start";
-    //   document.querySelector(".answer").innerHTML = "";
-    //   word = words[Math.floor(Math.random() * words.length)];
-    //   console.log(word);
-    // };
 
 
 

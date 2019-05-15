@@ -39,7 +39,7 @@ button {
 
 .letters {
   width: 325px;
-  height: 200px;
+  height: auto;
   border: 1px solid gray;
   border-radius: 10px;
   display: none;
@@ -59,7 +59,7 @@ button {
 .answer {
   margin-left: 35px;
   background-color: brown;
-  width: 300px;
+  width: 325px;
   height: 25px;
   float: left;
   color: wheat;
